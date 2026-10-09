@@ -1,7 +1,7 @@
 
-# Real-Time Inventory & Master Data Sync
+# Data synchronization framework
 
-A reusable Databricks framework that synchronizes inventory and master data using **Change Data Capture (CDC), incremental loading, and SCD Type 2**.
+A reusable Databricks framework that synchronizes data across datasets using **Change Data Capture (CDC), incremental loading, and SCD Type 2**.
 
 The framework uses a configuration file to define the dataset, columns, validation rules, and input files, allowing the same code to work with different datasets.
 
@@ -43,7 +43,7 @@ The framework creates the following tables:
 - `dim_<dataset>` — Historical master data.
 - `ctl_<dataset>_batch_log` — Batch processing status.
 
-Table names can be customized in the configuration. The inventory example uses `dim_product` for its history table.
+Table names can be customized in the configuration.
 
 ## Configuration
 
