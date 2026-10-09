@@ -1,0 +1,42 @@
+{
+  "dataset_name": "inventory",
+  "catalog": "workspace",
+  "schema": "inventory_sync",
+  "reset_demo": true,
+
+  "source": {
+    "format": "csv",
+    "folder": "data",
+    "delimiter": ",",
+    "snapshot_type": "full"
+  },
+
+  "columns": [
+    {"name": "product_id", "type": "string"},
+    {"name": "product_name", "type": "string"},
+    {"name": "warehouse", "type": "string"},
+    {"name": "quantity", "type": "int"}
+  ],
+
+  "business_keys": ["product_id"],
+  "master_columns": ["product_name", "warehouse"],
+  "measure_columns": ["quantity"],
+
+  "rules": {
+    "not_null": ["product_id", "product_name"],
+    "min_values": {"quantity": 0}
+  },
+
+  "tables": {
+    "bronze": "bronze_inventory_raw",
+    "current": "inventory_current",
+    "change_log": "inventory_change_log",
+    "dimension": "dim_product",
+    "batch_log": "ctl_batch_log"
+  },
+
+  "batches": [
+    {"batch_id": "B001", "file": "inventory_day1_raw.csv", "batch_date": "2026-10-01 00:00:00"},
+    {"batch_id": "B002", "file": "inventory_day2_raw.csv", "batch_date": "2026-10-02 00:00:00"}
+  ]
+}

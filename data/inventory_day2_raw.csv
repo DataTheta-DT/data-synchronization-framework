@@ -1,0 +1,11 @@
+product_id,product_name,warehouse,quantity
+P001,Rice,WH01,70
+P002,Sugar,WH01,200
+P003,Oil,WH01,100
+P004,Milk,WH02,80
+P005,Biscuit,WH02,0
+P006,Soap,WH02,60
+P007,Tea,WH01,75
+P008,Coffee,WH01,70
+P009,Salt,WH02,110
+P010,Flour,WH02,130
