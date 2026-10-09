@@ -1,7 +1,7 @@
 
 # Data synchronization framework
 
-A reusable Databricks framework that synchronizes data across datasets using **Change Data Capture (CDC), incremental loading, and SCD Type 2**.
+A reusable Databricks framework that synchronizes data across datasets using **Change Data Capture (CDC), incremental loading, and SCD**.
 
 The framework uses a configuration file to define the dataset, columns, validation rules, and input files, allowing the same code to work with different datasets.
 
